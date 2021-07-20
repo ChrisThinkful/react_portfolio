@@ -8,6 +8,8 @@ import {
 import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
 import Projects from './components/pages/Projects';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
 
 function App() {
   return (
@@ -20,7 +22,16 @@ function App() {
         <Switch>
           <Route path='/projects' component={Projects} />
         </Switch>
+        <Switch>
+          <Route path='/about' component={About} />
+        </Switch>
+        <Switch>
+          <Route path='/contact' component={Contact} />
+        </Switch>
       </Router>
+      <footer className='footer'>
+          <i class="far fa-copyright">&nbsp;Chris Clark | All Rights Reserved</i>
+      </footer>
     </>
   );
 }

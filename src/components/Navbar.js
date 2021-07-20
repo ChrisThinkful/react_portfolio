@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from './Button';
 import './Navbar.css';
 
@@ -10,6 +10,7 @@ function Navbar() {
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+    const history = useHistory();
 
     const showButton = () => {
         if (window.innerWidth <= 960) {
@@ -52,7 +53,9 @@ function Navbar() {
                                 </Link>
                             </li>
                         </ul>
-                        {button && <Button buttonStyle='btn--outline'>Contact</Button>}
+                        {button && <Button buttonStyle='btn--outline' onClick={()=>history.push('/contact')}>
+                            Contact
+                            </Button>}
                 </div>
             </nav>
         </>
